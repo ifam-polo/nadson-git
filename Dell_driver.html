@@ -1,0 +1,21 @@
+rom datetime import datetime
+
+class Pessoa:
+    ano_atual = int(datetime.strftime(datetime.now(), "%y"))
+
+    def __init__(self, nome, idade, comendo=False, falando=False):
+        self.nome = nome
+        self.idade = idade
+        self.comendo = comendo
+        self.falando = falando
+
+    def falar(self, assunto):
+        if self.comendo:
+            print(f"{self.nome} está comendo!")
+            return
+        if self.falando:
+            print(f"{self.nome} já está falando!")
+            return
+
+        print(f"{self.nome} está falando sobre {assunto}")
+        self.falando = True
